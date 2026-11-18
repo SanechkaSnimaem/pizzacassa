@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Свежая пицца с доставкой. Выбирайте любимую пиццу и заказывайте онлайн.">
+  <title>Pizza Casa — пицца с характером</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="header">
+    <a class="logo" href="#"><span class="logo-mark">✦</span> pizza<span>casa</span></a>
+    <nav class="nav">
+      <a href="#menu">Меню</a><a href="#about">О нас</a><a href="#delivery">Доставка</a>
+    </nav>
+    <a class="header-phone" href="tel:+37060000000">+370 600 00 000</a>
+    <button class="cart-button" id="cartButton" aria-label="Открыть корзину">Корзина <span id="cartCount">0</span></button>
+    <button class="menu-toggle" id="menuToggle" aria-label="Открыть меню">☰</button>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow"><span></span> ИТАЛЬЯНСКОЕ НАСТРОЕНИЕ КАЖДЫЙ ДЕНЬ</p>
+        <h1>Пицца, в которую<br>легко <em>влюбиться.</em></h1>
+        <p class="hero-text">Тонкое тесто, свежие ингредиенты и много любви. Готовим для вас — доставляем горячей.</p>
+        <div class="hero-actions"><a class="primary-button" href="#menu">Выбрать пиццу <span>↗</span></a><div class="hero-note">🍕 Выпекаем после заказа<br><b>от 20 минут</b></div></div>
+        <div class="hero-stats"><div><b>12+</b><span>видов пиццы</span></div><div><b>4.9/5</b><span>оценка гостей</span></div><div><b>30 мин</b><span>средняя доставка</span></div></div>
+      </div>
+      <div class="hero-art">
+        <div class="hero-circle"></div>
+        <img src="https://images.unsplash.com/photo-157 pizza" alt="" onerror="this.style.display='none'">
+        <div class="pizza-photo"></div>
+        <div class="floating-tag">FATTA CON AMORE <span>♥</span></div>
+        <div class="hero-price"><small>от</small><b>€8.90</b><small>за пиццу</small></div>
+      </div>
+    </section>
+
+    <section class="menu-section section" id="menu">
+      <div class="section-heading"><div><p class="eyebrow">НАШЕ МЕНЮ</p><h2>Выбирай свою <em>любимую</em></h2></div><p>Классика и авторские сочетания<br>для любого настроения.</p></div>
+      <div class="filters" id="filters">
+        <button class="filter active" data-filter="all">Всё меню</button><button class="filter" data-filter="classic">Классика</button><button class="filter" data-filter="meat">Мясные</button><button class="filter" data-filter="veggie">Вегетарианские</button>
+      </div>
+      <div class="pizza-grid" id="pizzaGrid"></div>
+    </section>
+
+    <section class="about-section" id="about">
+      <div class="about-image"><img src="https://images.unsplash.com/photo-1579751626657-72bc17010498?auto=format&fit=crop&w=1000&q=85" alt="Пицца из печи"></div>
+      <div class="about-copy"><p class="eyebrow">СЕКРЕТ В ПРОСТОМ</p><h2>Хорошая пицца<br>начинается с <em>любви.</em></h2><p>Мы не торопим тесто и не экономим на начинке. Используем качественные продукты, готовим каждую пиццу вручную и отправляем к вам прямо из печи.</p><a href="#menu" class="text-link">Попробовать наше меню <span>→</span></a></div>
+    </section>
+
+    <section class="delivery section" id="delivery"><div><p class="eyebrow">МЫ УЖЕ В ПУТИ</p><h2>Тёплая пицца.<br><em>Счастливый вечер.</em></h2><p>Оформите заказ на сайте — мы получим его в Telegram и свяжемся с вами для подтверждения.</p></div><div class="delivery-card"><span class="delivery-icon">🛵</span><b>Быстрая доставка</b><span>Ориентировочно от 30 минут</span><small>Стоимость и время уточнит оператор</small></div></section>
+  </main>
+
+  <footer class="footer"><a class="logo" href="#">✦ pizza<span>casa</span></a><span>© 2026 Pizza Casa. Сделано с любовью.</span><a href="tel:+37060000000">+370 600 00 000</a></footer>
+
+  <div class="overlay" id="overlay"></div>
+  <aside class="cart-drawer" id="cartDrawer" aria-label="Корзина">
+    <div class="drawer-head"><h3>Ваш заказ</h3><button id="closeCart" aria-label="Закрыть">✕</button></div>
+    <div class="cart-items" id="cartItems"><p class="empty-cart">Пока здесь пусто. Самое время выбрать пиццу 🍕</p></div>
+    <div class="cart-bottom">
+      <div class="total-row"><span>Итого</span><b id="cartTotal">€0.00</b></div>
+      <form id="orderForm">
+        <label>Ваше имя<input name="name" placeholder="Как к вам обращаться?" required></label>
+        <label>Телефон<input name="phone" type="tel" placeholder="+370 ..." required></label>
+        <label>Адрес доставки<textarea name="address" rows="2" placeholder="Улица, дом, квартира" required></textarea></label>
+        <label>Комментарий<textarea name="comment" rows="2" placeholder="Домофон, пожелания к заказу..."></textarea></label>
+        <button class="primary-button submit-order" type="submit">Отправить заказ <span>↗</span></button>
+        <p class="form-note">Нажимая кнопку, вы отправляете заказ для подтверждения оператором.</p>
+        <p class="form-message" id="formMessage" role="status"></p>
+      </form>
+    </div>
+  </aside>
+  <script src="script.js"></script>
+</body>
+</html>
