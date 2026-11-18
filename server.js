@@ -43,4 +43,6 @@ app.post("/api/order", async (req,res)=>{
   }
 });
 const port=process.env.PORT||3000;
-app.listen(port,()=>console.log(`Pizza Casa запущен: http://localhost:${port}`));
+app.listen(port, "0.0.0.0", () => {
+  console.log(`Pizza Casa запущен на порту ${port}`);
+});
